@@ -1,0 +1,39 @@
+<!-- Start Hero Area -->
+<div class="hero-area">
+    <div class="page-header text-align-center" style="background-image:url(images/bg_map.jpg);">
+        <div class="container">
+            <h1>Article</h1>
+        </div>
+    </div>
+</div>
+
+<div id="main-container">
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-md-8">
+                    <div *ngIf="article">
+                        <h2>{{article.title}}</h2>
+                        <p><strong>{{article.heading}}</strong></p>
+                        <div [innerHTML]="article.body"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 sidebar right-sidebar">
+                    <div class="sidebar-widget widget upcoming_events_widget" *ngIf="news">
+                        <h3 class="widgettitle">Latest News</h3>
+                        <ul class="events-list events-list-compact">
+                            <li *ngFor="let article of news">
+                                <div class="event-date">
+                                    <div class="event-month">{{article.timestamp | date: 'MMM'}}</div>
+                                    <div class="event-day">{{article.timestamp | date: 'dd'}}</div>
+                                </div>
+                                <a [routerLink]="['/news/' + article.id]"><strong>{{article.title}}</strong></a>
+                                <span class="meta-data">{{article.timestamp | date: 'EEEE'}}, {{article.timestamp | date: 'jm'}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

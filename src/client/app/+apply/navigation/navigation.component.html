@@ -1,0 +1,9 @@
+<!-- Start Hero Area -->
+<div class="utility-bar">
+    <ul class="template-submenu">
+        <li [ngClass]="{'active': step == '1'}"><a>Main Applicant</a></li>
+        <li [ngClass]="{'active': step == '2'}"><a>Family</a></li>
+        <li [ngClass]="{'active': step == '3'}"><a>Address</a></li>
+        <li [ngClass]="{'active': step == '9'}" (click)="changeStep(9)"><a>Photo</a></li>
+    </ul>
+</div>

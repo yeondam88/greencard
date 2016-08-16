@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.KeyinRoutes = [
+    {
+        path: 'keyin',
+        component: index_1.KeyinComponent
+    },
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC8ra2V5aW4va2V5aW4ucm91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFFQSxzQkFBK0IsU0FBUyxDQUFDLENBQUE7QUFFNUIsbUJBQVcsR0FBaUI7SUFDdkM7UUFDRSxJQUFJLEVBQUUsT0FBTztRQUNiLFNBQVMsRUFBRSxzQkFBYztLQUMxQjtDQUNGLENBQUMiLCJmaWxlIjoiYXBwLytrZXlpbi9rZXlpbi5yb3V0ZXMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSb3V0ZXJDb25maWcgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuXG5pbXBvcnQgeyBLZXlpbkNvbXBvbmVudCB9IGZyb20gJy4vaW5kZXgnO1xuXG5leHBvcnQgY29uc3QgS2V5aW5Sb3V0ZXM6IFJvdXRlckNvbmZpZyA9IFtcbiAge1xuICAgIHBhdGg6ICdrZXlpbicsXG4gICAgY29tcG9uZW50OiBLZXlpbkNvbXBvbmVudFxuICB9LFxuXTtcbiJdfQ==

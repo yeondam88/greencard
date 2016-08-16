@@ -1,0 +1,12 @@
+<ul class="pull-right social-icons">
+    <li class="globe">
+        <div class="dropdown">
+            <div (click)="openLanguages()" class="dropbtn"><i class="fa fa-globe"></i> Language
+            </div>
+            <div id="myDropdown" class="dropdown-content" [ngClass]="{'show': open}">
+                <a *ngFor="let language of languages" href="#" [class]="language.class" (click)="selectLanguage(language)"><span [class]="language.class"></span>{{language.language}}</a>
+            </div>
+        </div>
+    </li>
+    <li><a href="#" [class]="currentLanguage.class"><span [class]="currentLanguage.class"></span>{{currentLanguage.language}}</a></li>
+</ul>

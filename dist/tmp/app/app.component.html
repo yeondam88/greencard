@@ -1,0 +1,11 @@
+<div *ngIf="!auth.isAdmin">
+    <toolbar></toolbar>
+    <branding></branding>
+    <navbar id="navbar"></navbar>
+</div>
+<div *ngIf="auth.isAdmin">
+    <admin-toolbar></admin-toolbar>
+    <admin-branding></admin-branding>
+</div>
+<router-outlet></router-outlet>
+<footer *ngIf="!auth.isAdmin"></footer>

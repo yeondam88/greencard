@@ -1,0 +1,34 @@
+<div id="info-icon" (click)="toggleInfo()"><i class="fa fa-info"></i></div>
+<ul *ngIf="open">
+	<li>
+		<i class="fa fa-phone"></i>
+		<div>
+			<span class="ititle">Call us at</span> <br />
+			<strong>949-660-0020</strong>
+		</div>
+	</li>
+	<li>
+		<i class="fa fa-map-signs" (click)="changeState()"></i>
+		<div class="ititle">
+			<div *ngIf="state == 1">
+				3731 Wilshire Blvd <br />
+				Suite 612 <br />
+				Los Angeles <br />
+				California - 90010 USA
+			</div>
+			<div *ngIf="state == 2">
+				Executive Park <br />
+				Suite 275, Irvine <br />
+				California - 92614 USA
+			</div>
+		</div>
+	</li>
+	<li>
+		<i class="fa fa-clock-o"></i>
+		<div>
+			<span class="ititle">Working Hours</span> <br />
+			<strong>Mon-Sat <br />
+			09:00 to 17:00 PST</strong>
+		</div>
+	</li>
+</ul>

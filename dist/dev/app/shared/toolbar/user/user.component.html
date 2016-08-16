@@ -1,0 +1,8 @@
+<ul class="pull-right social-icons">
+    <li class="user" *ngIf="!auth.isLoggedIn"><a (click)="loginModal()"><i class="fa fa-user"></i> My Account</a></li>
+    <li class="user" *ngIf="auth.isLoggedIn"><a><i class="fa fa-user"></i> {{auth.user.firstname}}</a></li>
+</ul>
+
+<modal (close)="close()" *ngIf="showModal">
+    <login (loggedin)="close()"></login>
+</modal>

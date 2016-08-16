@@ -1,0 +1,13 @@
+<div *ngIf="current.application && countries">
+    <navigation [application]="current.application" [step]="step" (stepChange)="stepChange($event)"></navigation>
+    <!-- Main Content -->
+    <div id="main-container">
+        <div class="content">
+            <div class="container">
+                <main [application]="current.application" [countries]="countries" *ngIf="step == 1"></main>
+                <family [application]="current.application" [countries]="countries" *ngIf="step == 2"></family>
+                <address [application]="current.application" [countries]="countries" *ngIf="step == 3"></address>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="hero-area">
+    <div class="page-header have-submenu">
+        <div class="container">
+            <h1 class="text-center">News</h1>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <button class="btn btn-primary" [routerLink]="['/admin/news/new']">New Article</button>
+            </div>
+            <div class="col-sm-12">
+                <table class="table table-bordered table-hover" *ngIf="news">
+                    <thead>
+                        <tr>
+                            <th (click)="sort('title')">Title<span *ngIf="orderField == 'title'"><span class="glyphicon glyphicon-chevron-up" *ngIf="!reverseField"></span><span class="glyphicon glyphicon-chevron-down" *ngIf="reverseField"></span></span></th>
+                            <th (click)="sort('timestamp')">Date<span *ngIf="orderField == 'timestamp'"><span class="glyphicon glyphicon-chevron-up" *ngIf="!reverseField"></span><span class="glyphicon glyphicon-chevron-down" *ngIf="reverseField"></span></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let article of news | order : orderField : reverseField" (click)="goto(article)">
+                            <td>{{article.title}}</td>
+                            <td>{{article.timestamp}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

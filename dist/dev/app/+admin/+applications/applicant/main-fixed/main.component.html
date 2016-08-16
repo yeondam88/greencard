@@ -1,0 +1,120 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+        <h4>Personal Information</h4>
+        <hr>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Title</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.title | title}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>First Name</label>
+                </div>
+                <div class="col-sm-8">
+                {{application.firstname}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Last Name</label>
+                </div>
+                <div class="col-sm-8">
+                {{application.lastname}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Email</label>
+                </div>
+                <div class="col-sm-8">
+                {{application.email}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Gender</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.gender | gender}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Education</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.education | education}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Work Experience</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.experience | experience}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Phone</label>
+                </div>
+                <div class="col-sm-2">
+                {{application.phone_country}}
+                </div>
+                <div class="col-sm-6">
+                {{application.phone_number}}
+                </div>
+            </div>
+        </div>
+        <div class="spacer-30"></div>
+        <div class="row">
+        <h4>Birth Information</h4>
+        <hr>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth Day</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.birthday}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth City</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.birth_city}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth Country</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.birth_country | idToString: countries: 'country'}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Marital Status</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.marital | marital}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Children</label>
+                </div>
+                <div class="col-sm-8">
+                    {{application.children}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

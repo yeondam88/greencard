@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.BlogsRoutes = [
+    {
+        path: 'blogs',
+        component: index_1.BlogsComponent
+    },
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC8rYmxvZ3MvYmxvZ3Mucm91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFFQSxzQkFBK0IsU0FBUyxDQUFDLENBQUE7QUFFNUIsbUJBQVcsR0FBaUI7SUFDdkM7UUFDRSxJQUFJLEVBQUUsT0FBTztRQUNiLFNBQVMsRUFBRSxzQkFBYztLQUMxQjtDQUNGLENBQUMiLCJmaWxlIjoiYXBwLytibG9ncy9ibG9ncy5yb3V0ZXMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBSb3V0ZXJDb25maWcgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuXG5pbXBvcnQgeyBCbG9nc0NvbXBvbmVudCB9IGZyb20gJy4vaW5kZXgnO1xuXG5leHBvcnQgY29uc3QgQmxvZ3NSb3V0ZXM6IFJvdXRlckNvbmZpZyA9IFtcbiAge1xuICAgIHBhdGg6ICdibG9ncycsXG4gICAgY29tcG9uZW50OiBCbG9nc0NvbXBvbmVudFxuICB9LFxuXTtcbiJdfQ==

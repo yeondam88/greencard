@@ -1,0 +1,10 @@
+"use strict";
+var index_1 = require('./index');
+exports.QnaRoutes = [
+    {
+        path: 'qna',
+        component: index_1.QnaComponent
+    },
+];
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC8rcW5hL3FuYS5yb3V0ZXMudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUVBLHNCQUE2QixTQUFTLENBQUMsQ0FBQTtBQUUxQixpQkFBUyxHQUFpQjtJQUNyQztRQUNFLElBQUksRUFBRSxLQUFLO1FBQ1gsU0FBUyxFQUFFLG9CQUFZO0tBQ3hCO0NBQ0YsQ0FBQyIsImZpbGUiOiJhcHAvK3FuYS9xbmEucm91dGVzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUm91dGVyQ29uZmlnIH0gZnJvbSAnQGFuZ3VsYXIvcm91dGVyJztcblxuaW1wb3J0IHsgUW5hQ29tcG9uZW50IH0gZnJvbSAnLi9pbmRleCc7XG5cbmV4cG9ydCBjb25zdCBRbmFSb3V0ZXM6IFJvdXRlckNvbmZpZyA9IFtcbiAge1xuICAgIHBhdGg6ICdxbmEnLFxuICAgIGNvbXBvbmVudDogUW5hQ29tcG9uZW50XG4gIH0sXG5dO1xuIl19
