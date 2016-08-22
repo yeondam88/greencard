@@ -5392,7 +5392,128 @@ span.lang-th {
     margin-top: 20px;
 }
 
+/*----------------------
+  Pricing Tables
+----------------------*/
 
+.container-card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    max-width: 900px;
+    margin: 40px auto;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
 
+@media all and (max-width: 900px) {
+    .container-card {
+        width: 100%;
+    }
+}
 
+@media all and (max-width: 725px) {
+    .container-card {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+.card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin-right: 20px;
+    background: #fff;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border:1px solid #036;
+    box-shadow: 0 7px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+a.price-btn {
+    position: relative;
+    font-weight: bold;
+    font-size: 0.8em;
+    background: #036;
+    color: #fff;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    padding: 10px 20px;
+    border-bottom: 3px #eee solid;
+    overflow: hidden;
+}
+
+ul.price-des {
+    list-style-type: none;
+    padding: 10px 0 15px 0;
+}
+
+ul.price-des li {
+    font-size: 0.8em;
+    padding-bottom: 10px;
+}
+
+ul.price-des li:first-of-type {
+    padding-top: 10px;
+}
+
+h1.card-head-bg {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+h2.card-head-sm {
+    font-size: .6em;
+    font-weight: 400;
+    padding: 3px 5px 15px 5px;
+}
+
+.price {
+    width: 100%;
+    background: #ecedf0;
+}
+
+h3.price-number {
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h3.price-number span {
+    font-weight: 400;
+    font-size: 0.4em;
+}
 
