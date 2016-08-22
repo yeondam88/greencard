@@ -8,6 +8,7 @@ import { BlogsRoutes } from './+blogs/index';
 import { ContactRoutes } from './+contact/index';
 import { AdminRoutes } from './+admin/index';
 import { KeyinRoutes } from './+keyin/index';
+import { PricingRoutes } from './+pricing/index';
 
 const routes: RouterConfig = [
   ...HomeRoutes,
@@ -17,7 +18,8 @@ const routes: RouterConfig = [
   ...BlogsRoutes,
   ...ContactRoutes,
   ...AdminRoutes,
-  ...KeyinRoutes
+  ...KeyinRoutes,
+  ...PricingRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [
