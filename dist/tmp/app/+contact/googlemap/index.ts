@@ -1,1 +1,0 @@
-export * from './googlemap.component';
