@@ -10,14 +10,14 @@
 			</div>
 			<nav class="main-navigation pull-left" [ngClass]="{'mini-menu': miniMenu}">
 				<ul class="dd-menu sf-menu">
-					<li><a [routerLink]="['/']">About Green Card Lottery</a></li>
-					<li><a [routerLink]="['/apply']">Apply</a></li>
-					<li><a [routerLink]="['/pricing']">Pricing</a></li>
-					<li><a [routerLink]="['/qna']">Q&A</a></li>
-					<li><a [routerLink]="['/news']">News</a></li>
-					<li><a [routerLink]="['/blogs']">Blogs</a></li>
-					<li><a [routerLink]="['/contact']">Contact Us</a></li>
-					<li *ngIf="auth.isAdmin"><a [routerLink]="['/admin']">Admin</a></li>
+					<li><a [routerLink]="['/']" (click)="miniMenu = !miniMenu">About Green Card Lottery</a></li>
+					<li><a [routerLink]="['/apply']" (click)="miniMenu = !miniMenu">Apply</a></li>
+					<li><a [routerLink]="['/pricing']" (click)="miniMenu = !miniMenu">Pricing</a></li>
+					<li><a [routerLink]="['/qna']" (click)="miniMenu = !miniMenu">Q&A</a></li>
+					<li><a [routerLink]="['/news']" (click)="miniMenu = !miniMenu">News</a></li>
+					<li><a [routerLink]="['/blogs']" (click)="miniMenu = !miniMenu">Blogs</a></li>
+					<li><a [routerLink]="['/contact']" (click)="miniMenu = !miniMenu">Contact Us</a></li>
+					<li *ngIf="auth.isAdmin"><a [routerLink]="['/admin']" (click)="miniMenu = !miniMenu">Admin</a></li>
 				</ul>
 			</nav>
 		</div>
