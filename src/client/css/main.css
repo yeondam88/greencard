@@ -1,14 +1,15 @@
 /*------------------------------------------------------------------
 [Master Stylesheet]
-Project:  GoGreen
-Version:  1.0
-Last change:  07/17/16
-Author: sungllo 
+Project:	GoGreen
+Version:	1.0
+Last change:	07/17/16
+Author:	sungllo
 -------------------------------------------------------------------*/
 
 
 /* Stylesheets and Google fonts import */
 
+@import url("font-awesome.css");
 @import url("line-icons.css");
 @import url("animations.css");
 @import url(http://fonts.googleapis.com/css?family=Domine:400,700);
@@ -38,6 +39,7 @@ Author: sungllo
 
 
 /*-------------------------------------------------------------------------------------------*/
+
 html,
 body,
 div,
@@ -123,7 +125,7 @@ video {
     padding: 0;
     border: 0;
     font: inherit;
-    font-size: 100%;
+    font-size: 102%;
 }
 
 
@@ -240,7 +242,7 @@ a > img {
 
 .dgray-bg,
 .notice-bar {
-    background: #022b52;
+    background: #003265;
 }
 
 .dgray-bg h1,
@@ -276,6 +278,7 @@ strong,
 
 p {
     margin: 0 0 20px;
+    line-height:1.7em;
 }
 
 i,
@@ -653,6 +656,7 @@ dl dt {
 
 address.ico i {
     display: inline-block;
+    float: left;
     clear: both;
     padding-top: 3px;
 }
@@ -1278,7 +1282,6 @@ p.meta-data {
 .flexslider .slides > li {
     display: none;
     -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 .slides:after {
@@ -1702,7 +1705,7 @@ html[xmlns] .slides {
 
 body {
     background-color: #FFF;
-    color: #858e97;
+    color: #444446;
     font-size: 15px;
     font-weight: 400;
     font-family: "Roboto", sans-serif;
@@ -1737,8 +1740,8 @@ body.boxed .body {
 }
 
 .topbar {
-    background: #8d1812;
-    padding: 9px 0 1px 0;
+    background: #036;
+    padding: 9px 0 0;
 }
 
 .topbar p {
@@ -1820,7 +1823,7 @@ body.boxed .body {
 }
 
 .site-header {
-    background: #022b52;
+    background: #fff;
     padding: 17px 0;
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
     position: relative;
@@ -1858,7 +1861,8 @@ body.boxed .body {
 }
 
 .site-logo {
-    text-align: center;
+    margin:7px auto 0;
+    float: left;
 }
 
 .default-logo {
@@ -1884,6 +1888,7 @@ body.boxed .body {
     line-height: 40px;
     color: #FFF;
     display: inline-block;
+    float: right;
 }
 
 #info-content {
@@ -1959,6 +1964,7 @@ body.boxed .body {
     white-space: nowrap;
     margin-left: 40px;
     display: inline-block;
+    float: none;
 }
 
 .header-style3 #info-content > li i {
@@ -2024,6 +2030,7 @@ body.boxed .body {
     font-weight: 400;
     position: relative;
     display: inline-block;
+    float: left;
     margin-right: 35px;
 }
 
@@ -2034,16 +2041,16 @@ body.boxed .body {
 
 .dd-menu > li > a {
     display: block;
-    color: #FFF;
+    color: #222;
     line-height: 42px;
 }
 
 .header-style2 .dd-menu > li > a {
-    color: #FFF;
+    color: #222;
 }
 
 .header-style2 .dd-menu > li > a:hover {
-    color: #FFF;
+    color: #444;
     opacity: .8;
 }
 
@@ -2061,13 +2068,13 @@ body.boxed .body {
     display: none;
     min-width: 100%;
     height: auto;
-    background: #FFF;
+    background: #222;
     float: none;
 }
 
 .header-style2 .dd-menu > li ul {
     top: 60px;
-    background: #FFF;
+    background: #222;
 }
 
 .header-style3 .dd-menu > li ul {
@@ -2366,9 +2373,9 @@ body.boxed .body {
     text-align: center;
     line-height: 50px;
     font-size: 24px;
-    margin-right: 20px;    
-    margin-top: 18px;
+    margin-right: 20px;
     display: inline-block;
+    float: left;
 }
 
 .notice-bar .flexslider .meta-data {
@@ -2402,7 +2409,7 @@ body.boxed .body {
     height: 1px;
     width: 20px;
     margin-right: 10px;
-    background: #222;
+    background: #fff !important;
 }
 
 .parallax .subhead {
@@ -2512,10 +2519,11 @@ body.boxed .body {
 
 .shadow-block-nomove {
     background: #FFF;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .15);
+    box-shadow: 0 7px 10px rgba(0, 0, 0, .15);
     padding: 40px;
     position: relative;
     z-index: 9;
+    border:1px solid #036;
 }
 
 .team-grid-item h4 {
@@ -2745,15 +2753,14 @@ body.boxed .body {
 }
 
 .site-footer {
-    background-color: #022b52;
+    background-color: #cccccd;
     padding: 50px 0 0;
 }
 
 .footer-row2 {
     padding: 15px 0;
     margin-top: 40px;
-    border-top: 1px solid rgba(255, 255, 255, .1);
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    border-top: 1px solid #444445;
 }
 
 .footer-row3 {
@@ -2817,12 +2824,12 @@ body.boxed .body {
 
 .site-footer .footer_widget a,
 .site-footer a {
-    color: #858e97;
+    color: #444445;
 }
 
 .site-footer .footer_widget a:hover,
 .site-footer a:hover {
-    color: #FFF;
+    text-decoration:underline;
 }
 
 .cta p {
@@ -3113,6 +3120,8 @@ body.boxed .body {
     padding: 20px;
 }
 
+.hero-area {}
+
 .pages-sub-menu {
     margin: 0;
     list-style-type: none;
@@ -3191,6 +3200,9 @@ body.boxed .body {
 .single-post .post-item-meta {
     padding: 0 0 10px 0;
 }
+
+.post-item-meta a,
+.post-item-meta a:hover {}
 
 .post-item-meta a:hover {
     opacity: .7;
@@ -3597,20 +3609,6 @@ body.boxed .body {
     margin: 0;
 }
 
-.widget_categories ul li,
-.widget_archive ul li,
-.widget_recent_entries ul li,
-.widget_recent_comments ul li,
-.widget_links ul li,
-.widget_meta ul li,
-.twitter-widget ul li,
-.widget_recent_posts ul li,
-.widget_custom_category ul li {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
 .widget_categories ul li i,
 .widget_archive ul li i,
 .widget_recent_entries ul li i,
@@ -3621,18 +3619,6 @@ body.boxed .body {
 .widget_custom_category ul li i {
     font-size: 11px;
     color: #999
-}
-
-.footer_widget.widget_categories ul li,
-.footer_widget.widget_archive ul li,
-.footer_widget.widget_recent_entries ul li,
-.footer_widget.widget_recent_comments ul li,
-.footer_widget.widget_links ul li,
-.footer_widget.widget_meta ul li,
-.footer_widget .twitter-widget ul li,
-.footer_widget.widget_recent_posts ul li,
-.footer_widget.widget_custom_category ul li {
-    border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
 .widget_categories ul li a,
@@ -3709,9 +3695,9 @@ body.boxed .body {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     border-bottom: 0;
-    color: #FFF;
+    color: #444445;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
     font-size: 15px;
     border-left: 0;
@@ -3901,7 +3887,7 @@ body.boxed .body {
 
 .icon-box.ibox-dark .ibox-icon i,
 .icon-box.ibox-dark .ibox-icon img {
-    background-color: #8d1812;
+    background-color: #373738;
 }
 
 .icon-box.ibox-border .ibox-icon {
@@ -3917,7 +3903,7 @@ body.boxed .body {
 }
 
 .icon-box.ibox-border.ibox-dark .ibox-icon {
-    border-color: #8d1812;
+    border-color: #373738;
 }
 
 .icon-box.ibox-plain .ibox-icon {
@@ -4177,7 +4163,7 @@ body.boxed .body {
     box-sizing: content-box;
     top: -3px;
     left: -3px;
-    box-shadow: 0 0 0 2px #8d1812;
+    box-shadow: 0 0 0 2px #373738;
     -webkit-transition: 0 .3s, opacity .3s;
     -webkit-transform: scale(.8);
     -moz-transition: 0 .3s, opacity .3s;
@@ -4191,12 +4177,12 @@ body.boxed .body {
 
 .icon-box .ibox-icon i:hover,
 .icon-box:hover .ibox-icon i {
-    background-color: #8d1812;
+    background-color: #373738;
     color: #FFF;
 }
 
 .icon-box.ibox-outline:hover .ibox-icon {
-    border-color: #8d1812;
+    border-color: #373738;
 }
 
 .icon-box {
@@ -4532,6 +4518,8 @@ body.boxed .body {
 @media (min-width:1200px) {}
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    .dd-menu > li,
+    #info-toggle {}
     .footer_widget.widget_links ul {
         float: none;
         margin-right: 0;
@@ -4574,9 +4562,6 @@ body.boxed .body {
     .main-navigation .hamburger-menu {
         width: 100%;
     }
-    .mini-menu{
-        display: block;
-    }
     .dd-menu > li {
         width: 100%;
         float: none;
@@ -4586,6 +4571,7 @@ body.boxed .body {
     }
     #menu-toggle {
         display: inline-block;
+        float: left;
     }
     .dd-menu > li > a {
         color: #FFF;
@@ -4773,7 +4759,7 @@ body.boxed .body {
 }
 
 @media only screen and (max-width: 767px) {
-    .main-navigation {
+    .topbar {
         text-align: center;
     }
     .topbar p {
@@ -4787,6 +4773,7 @@ body.boxed .body {
         margin-left: 0;
     }
     .topbar .social-icons {
+        float: none !important;
         margin-top: 12px;
         display: inline-block;
         margin-left: 0;
@@ -4794,6 +4781,7 @@ body.boxed .body {
     }
     .topbar .search-form {
         display: inline-block;
+        float: none;
         border-left: 1px solid rgba(255, 255, 255, .2);
         border-right: 0;
         padding-left: 30px;
@@ -4942,7 +4930,7 @@ only screen and ( min-resolution: 2dppx) {
 
 
 /*----------------------
-  Customizing Theme
+	Customizing Theme
 ----------------------*/
 
 .eligible-title {
@@ -5016,7 +5004,7 @@ only screen and ( min-resolution: 2dppx) {
 }
 
 #msform input
-/*buttons*/
+    /*buttons*/
 
 #msform .action-button {
     width: 100px;
@@ -5061,7 +5049,7 @@ only screen and ( min-resolution: 2dppx) {
 
 
 /*----------------------
-  Dropdown style
+	Dropdown style
 ----------------------*/
 
 
@@ -5241,7 +5229,7 @@ span.lang-th {
 
 
 /*----------------------
-  Mobile Menu
+	Mobile Menu
 ----------------------*/
 
 .hamburger {
@@ -5303,7 +5291,7 @@ span.lang-th {
 
 
 /*----------------------
-  Application form
+	Application form
 ----------------------*/
 
 .application-form {
@@ -5368,7 +5356,7 @@ span.lang-th {
     border-radius: 10px;
     color: #FFF;
     margin: 0 auto;
-    background: #022b52;
+    background: #003265;
     font-size: 20px;
     text-align: center;
     font-style: normal;
@@ -5378,12 +5366,12 @@ span.lang-th {
 
 .application-form input[type="submit"]:hover,
 .application-form input[type="button"]:hover {
-    background: #8d1812;
+    background: #373738;
 }
 
 
 /*----------------------
-  Eligible Countries
+	Eligible Countries
 ----------------------*/
 
 .bulk-text-header {
@@ -5393,7 +5381,7 @@ span.lang-th {
 }
 
 /*----------------------
-  Pricing Tables
+	Pricing Tables
 ----------------------*/
 
 .container-card {
@@ -5516,4 +5504,3 @@ h3.price-number span {
     font-weight: 400;
     font-size: 0.4em;
 }
-
