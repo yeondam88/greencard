@@ -1,6 +1,12 @@
 <div class="placeholder">
 	<div class="site-header" [ngClass]="{'fixed':fixed}">
 		<div class="container info-container">
+			<div class="site-logo">
+				<a href="index.html">
+					<img src="images/logo.png" alt="" class="default-logo">
+					<img src="images/logo@2x.png" alt="" class="retina-logo" width="186" height="22">
+				</a>
+			</div>
 			<div class="pull-right"><info></info></div>
 			<div id="menu-toggle" class="hamburger" (click)="miniMenu = !miniMenu">
 				<div></div>
