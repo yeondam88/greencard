@@ -91,6 +91,7 @@
     "merge-stream": "^1.0.0",
     "moment": "^2.14.1",
     "ng2-file-upload": "^1.0.3",
+    "node-sass": "^3.8.0",
     "open": "0.0.5",
     "postcss-reporter": "^1.4.1",
     "protractor": "^4.0.0",
