@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 export class ApiService {
     public requests: number = 0;
     public requestsEmitter = new EventEmitter<number>();
-    private url: string = "http://localhost/rest/";
+    private url: string;
 
     constructor (private http: Http){
         if ('<%= ENV %>' === 'prod') { this.url = "/rest/"; }
