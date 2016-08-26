@@ -1,6 +1,5 @@
 export * from './navbar/index';
 export * from './toolbar/index';
-export * from './branding/index';
 export * from './footer/index';
 export * from './modal/index';
 
