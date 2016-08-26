@@ -3,8 +3,8 @@
 		<div class="container info-container">
 			<div class="site-logo">
 				<a href="index.html">
-					<img src="images/logo.png" alt="" class="default-logo">
-					<img src="images/logo@2x.png" alt="" class="retina-logo" width="186" height="22">
+					<img src="images/logo-light.png" alt="" class="default-logo">
+					<img src="images/logo-light@2x.png" alt="" class="retina-logo" width="186" height="22">
 				</a>
 			</div>
 			<div class="pull-right"><info></info></div>
@@ -14,7 +14,7 @@
 				<div></div>
 				<div></div>
 			</div>
-			<nav class="main-navigation pull-left" [ngClass]="{'mini-menu': miniMenu}">
+			<nav class="main-navigation pull-right" [ngClass]="{'mini-menu': miniMenu}">
 				<ul class="dd-menu sf-menu">
 					<li><a [routerLink]="['/']" (click)="miniMenu = !miniMenu">About Green Card Lottery</a></li>
 					<li><a [routerLink]="['/apply']" (click)="miniMenu = !miniMenu">Apply</a></li>

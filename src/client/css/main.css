@@ -5078,7 +5078,7 @@ only screen and ( min-resolution: 2dppx) {
 .lang-tw,
 .lang-jp,
 .lang-th {
-    color: #222 !important;
+    color: #fff !important;
     text-align: left !important;
     margin: 0 !important;
 }
