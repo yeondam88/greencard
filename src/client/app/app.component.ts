@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import { ToolbarComponent, BrandingComponent, NavbarComponent, FooterComponent, AdminBrandingComponent, AdminToolbarComponent } from './shared/index';
+import { ToolbarComponent, NavbarComponent, FooterComponent, AdminBrandingComponent, AdminToolbarComponent } from './shared/index';
 import { AuthService } from './guard/index';
 import { ApiService } from './api/index';
 
@@ -13,7 +13,7 @@ import { ApiService } from './api/index';
   selector: 'sd-app',
   templateUrl: 'app.component.html',
   providers: [ApiService],
-  directives: [ROUTER_DIRECTIVES, ToolbarComponent, BrandingComponent, NavbarComponent, FooterComponent, AdminBrandingComponent, AdminToolbarComponent]
+  directives: [ROUTER_DIRECTIVES, ToolbarComponent, NavbarComponent, FooterComponent, AdminBrandingComponent, AdminToolbarComponent]
 })
 export class AppComponent {
   constructor(private auth: AuthService){}
