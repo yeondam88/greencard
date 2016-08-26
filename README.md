@@ -22,6 +22,8 @@ npm run build.prod
 2. If you haven't already created a mysql database named `greencard`, create one now (using mysql cli or phpmyadmin).
 3. Inside `Rest` you will find the file `greencard.sql`.  Import this to your mysql database (using mysql cli or phpmyadmin).
 4. In `Rest/lib/mysql.php` you need to change username `root` to your mysql username and `password` to your mysql password.
+5. When working with Apache2 make sure you have `mod_rewrite` and `mod_headers` enabled.
+6. If using nginx make sure the path to `/rest` directs to the `Rest` folder.
 
 # Configuration
 Default application server configuration
