@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
-import { ApiService } from '../../api/index';
+
 
 /**
  * This class represents the lazy loaded HomeComponent.
@@ -38,9 +38,8 @@ export class MainComponent {
             this.application.city.length > 1 &&
             this.application.marital.id && this.application.marital && this.countries[0] &&
             this.application.email &&
-            this.application.password &&
+            this.application.confirmEmail &&
             this.application.email === this.application.confirmEmail &&
-            this.application.password === this.application.confirmPassword &&
             this.application.birth.day.id && this.application.birth.month.id && this.application.birth.year.id)
             {
             return true;

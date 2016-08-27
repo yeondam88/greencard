@@ -5,7 +5,7 @@ import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 
 import { APP_ROUTER_PROVIDERS } from './app.routes';
-import { AuthService, AuthGuard } from './guard/index';
+import { AuthService, AuthGuard, NormalGuard } from './guard/index';
 import { AppComponent } from './app.component';
 
 if ('<%= ENV %>' === 'prod') { enableProdMode(); }
@@ -21,6 +21,7 @@ bootstrap(AppComponent, [
   APP_ROUTER_PROVIDERS,
   AuthService,
   AuthGuard,
+  NormalGuard,
   {
     provide: APP_BASE_HREF,
     useValue: '<%= APP_BASE %>'

@@ -7,6 +7,7 @@ import { NewsRoutes } from './+news/index';
 import { BlogsRoutes } from './+blogs/index';
 import { ContactRoutes } from './+contact/index';
 import { AdminRoutes } from './+admin/index';
+import { ApplicantRoutes } from './+applicant/index';
 import { KeyinRoutes } from './+keyin/index';
 import { PricingRoutes } from './+pricing/index';
 
@@ -19,7 +20,8 @@ const routes: RouterConfig = [
   ...ContactRoutes,
   ...AdminRoutes,
   ...KeyinRoutes,
-  ...PricingRoutes
+  ...PricingRoutes,
+  ...ApplicantRoutes
 ];
 
 export const APP_ROUTER_PROVIDERS = [

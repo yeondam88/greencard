@@ -1,0 +1,29 @@
+<!-- Start Hero Area -->
+<div class="hero-area">
+    <div class="page-header have-submenu">
+        <div class="container">
+            <div class="col-sm-6">
+            <h2>Applicant Information</h2>
+            </div>
+            <div class="col-sm-6 text-align-right">
+            <h2>Status</h2>
+            </div>
+            <div class="col-sm-6">
+            <h4>ID: {{application.id}}<br />Date: {{application.timestamp}}</h4>
+            </div>
+            <div class="col-sm-6 text-align-right">
+            <h4>{{application.status | status}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="utility-bar">
+    <div class="container">
+        <ul class="template-submenu">
+            <li [ngClass]="{'active': step == 1}"><a (click)="changeStep(1)">Main Applicant</a></li>
+            <li [ngClass]="{'active': step == 2}"><a (click)="changeStep(2)">Family</a></li>
+            <li [ngClass]="{'active': step == 3}"><a (click)="changeStep(3)">Address</a></li>
+            <li [ngClass]="{'active': step == 4}"><a (click)="changeStep(4)">Photo</a></li>
+        </ul>
+    </div>
+</div>

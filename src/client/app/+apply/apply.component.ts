@@ -234,6 +234,7 @@ export class ApplyComponent implements OnInit {
 
   registrationCheck(){
     if(
+      this.eligible() &&
       this.application.firstname.length > 1 &&
       this.application.lastname.length > 1 &&
       this.application.title.id && this.application.titles != this.titles[0] &&
@@ -245,6 +246,8 @@ export class ApplyComponent implements OnInit {
       this.application.email &&
       this.application.confirmEmail &&
       this.application.email === this.application.confirmEmail &&
+      this.application.password &&
+      this.application.password === this.application.confirmPassword &&
       this.application.address.line1.length > 1 &&
       this.application.address.postal.length > 1 &&
       this.application.address.city.length > 1 &&

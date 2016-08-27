@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from '../../api/index';
 import { AuthService } from '../../guard/index';
 
@@ -13,7 +14,7 @@ export class LoginComponent {
   private error: string;
 	@Output() loggedin = new EventEmitter<boolean>();
 
-  constructor(private api: ApiService, private auth: AuthService) {}
+  constructor(private api: ApiService, private auth: AuthService, private router: Router) {}
 
   ngOnInit() {
   }
@@ -24,6 +25,7 @@ export class LoginComponent {
         this.error = null;
         this.auth.login(user);
 		    this.loggedin.emit(true);
+        this.router.navigate(['applicant']);
       },
       err => {
         this.error = "Email or ID is incorrect";

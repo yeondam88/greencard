@@ -281,9 +281,9 @@ export class SeedConfig {
    */
   APP_ASSETS: InjectableDependency[] = [
     { src: `${this.CSS_SRC}/main.${ this.getInjectableStyleExtension() }`, inject: true, vendor: false },
-    { src: `${this.CSS_SRC}/custom.${ this.getInjectableStyleExtension() }`, inject: true, vendor: false },
     { src: `${this.CSS_SRC}/color1.${ this.getInjectableStyleExtension() }`, inject: true, vendor: false },
-    { src: `${this.CSS_SRC}/flexslider.${ this.getInjectableStyleExtension() }`, inject: true, vendor: false }
+    { src: `${this.CSS_SRC}/flexslider.${ this.getInjectableStyleExtension() }`, inject: true, vendor: false },
+    { src: `${this.CSS_SRC}/custom.${ this.getInjectableStyleExtension() }`, inject: true, vendor: false }
   ];
 
   /**

@@ -113,17 +113,20 @@ function login(){
 
 	$db = connect_db();
 	try{
-		$sql = "SELECT * FROM tbl_applications WHERE email = :email";
+		$sql = "SELECT id, firstname, lastname, password, email, token FROM tbl_applications WHERE email = :email";
+
 		$q = $db->prepare($sql);
 		$q->bindParam(':email', $credentials->email);
 		$q->execute();
 		$user = $q->fetch(PDO::FETCH_OBJ);
 		if($user)
 		{
-			if($credentials->id == $user->id){
-				echo json_encode($user, JSON_NUMERIC_CHECK);
+			if(password_verify($credentials->password, $user->password)) {	
+				$response = array('id'=>$user->id, 'firstname'=>$user->firstname, 'lastname'=>$user->lastname, 'email'=>$user->email, 'token'=>$user->token);
+				echo json_encode($response, JSON_NUMERIC_CHECK);
 			}
-			else{
+			else
+			{
 				$app->response->setStatus(401);
 			}
 		}
@@ -150,7 +153,7 @@ function register(){
 	try{
 		$sql = "INSERT INTO tbl_users (username, password, token) values (:username, :password, :token)";
 		
-		$hash = password_hash($credentials->password, PASSWORD_BCRYPT);
+		$hash = password_hash($credentials->password, PASSWORD_DEFAULT);
 		$token = md5(uniqid(mt_rand(), true));
 
 		$q = $db->prepare($sql);
@@ -271,12 +274,12 @@ function postApplication(){
 	$application = $data->application;
 
 	$sql = "INSERT INTO tbl_applications (title, firstname, lastname, gender, education, 
-		experience, birth_city, birth_country, marital, email, phone_country, phone_number, 
-		address, address2, postal, address_city, address_state, address_country, birthday, children) 
+		experience, birth_city, birth_country, marital, email, password, phone_country, phone_number, 
+		address, address2, postal, address_city, address_state, address_country, birthday, children, token) 
 		VALUES 
 		(:title, :firstname, :lastname, :gender, :education, :experience, :birth_city, :birth_country, 
-		:marital, :email, :phone_country, :phone_number, :address, :address2, :postal, :address_city, 
-		:address_state, :address_country, :birthday, :children)";
+		:marital, :email, :password, :phone_country, :phone_number, :address, :address2, :postal, :address_city, 
+		:address_state, :address_country, :birthday, :children, :token)";
 
 	$sql_family = "INSERT INTO tbl_applications_family (firstname, lastname, gender, education, 
 		experience, birthday, birth_city, birth_country, relationship, application_id) VALUES (:firstname, :lastname, 
@@ -285,6 +288,8 @@ function postApplication(){
 	$db = connect_db();
 
 	try{
+		$passwordHash = password_hash($application->password, PASSWORD_DEFAULT);
+
 		$q = $db->prepare($sql);
 		$q->bindParam(':title', $application->title->id);
 		$q->bindParam(':firstname', $application->firstname);
@@ -296,6 +301,7 @@ function postApplication(){
 		$q->bindParam(':birth_country', $application->country->id);
 		$q->bindParam(':marital', $application->marital->id);
 		$q->bindParam(':email', $application->email);
+		$q->bindParam(':password', $passwordHash);
 		$q->bindParam(':phone_country', $application->phone->country);
 		$q->bindParam(':phone_number', $application->phone->number);
 		$q->bindParam(':address', $application->address->line1);
@@ -306,6 +312,7 @@ function postApplication(){
 		$q->bindParam(':address_country', $application->address->country->id);
 		$q->bindParam(':birthday', $application->birthday);
 		$q->bindParam(':children', $application->children);
+		$q->bindParam(':token', md5(uniqid(mt_rand(), true)));
 		$q->execute();
 		$application_id = $db->lastInsertId();
 

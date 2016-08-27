@@ -9,8 +9,8 @@
                         <input type="text" [(ngModel)]="credential.email" name="email" class="form-control" placeholder="Email">
                     </div>
                     <div class="form-group">
-                        <label for="id">Id</label>
-                        <input type="number" [(ngModel)]="credential.id" name="id" class="form-control" placeholder="Id Number">
+                        <label for="id">Password</label>
+                        <input type="password" [(ngModel)]="credential.password" name="password" class="form-control" placeholder="Password">
                     </div>
                     <div class="alert alert-danger" *ngIf="error">{{error}}</div>
                     <button class="btn btn-success btn-block" (click)="login(credential)">Login</button>
