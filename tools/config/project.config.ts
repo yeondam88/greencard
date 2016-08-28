@@ -19,10 +19,18 @@ export class ProjectConfig extends SeedConfig {
 
   constructor() {
     super();
-    // this.APP_TITLE = 'Put name of your app here';
+    this.APP_TITLE = 'GoGreen - Law Business';
 
     /* Enable typeless compiler runs (faster) between typed compiler runs. */
     // this.TYPED_COMPILE_INTERVAL = 5;
+
+    this.SYSTEM_CONFIG_DEV.paths['ng2-dragula'] =
+      `${this.APP_BASE}node_modules/ng2-dragula/ng2-dragula`;
+
+    this.SYSTEM_BUILDER_CONFIG.packages['ng2-dragula'] = {
+        main: 'ng2-dragula.js',
+        defaultExtension : 'js'
+    }
 
     // Add `NPM` third-party libraries to be injected/bundled.
     this.NPM_DEPENDENCIES = [
@@ -34,7 +42,8 @@ export class ProjectConfig extends SeedConfig {
       //{src: 'bootstrap/dist/js/bootstrap.min.js', inject: 'libs'},
       {src: 'bootstrap/dist/css/bootstrap.min.css', inject: true},
       {src: 'font-awesome/css/font-awesome.min.css', inject: true},
-      {src: 'sweetalert2/dist/sweetalert2.min.css', inject: true}
+      {src: 'sweetalert2/dist/sweetalert2.min.css', inject: true},
+      {src: 'dragula/dist/dragula.min.css', inject: true}
     ];
 
     // Add `local` third-party libraries to be injected/bundled.

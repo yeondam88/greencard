@@ -1,0 +1,36 @@
+<!-- Start Hero Area -->
+<div class="hero-area">
+    <div class="page-header have-submenu">
+        <div class="container">
+            <h2 class="text-center">Edit Countries</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="content" *ngIf="countries">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-primary" (click)="save(denied)">Save</button>
+            </div>
+            <div class="col-sm-6">
+                <h3>Allowed Countries</h3>
+                <ul [dragula]="'bag-one'" [dragulaModel]='allowed'>
+                    <li *ngFor="let country of allowed | order: 'country': reverseOrder">
+                        {{country.country}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-sm-6">
+                <h3>Denied Countries</h3>
+                <ul [dragula]="'bag-one'" [dragulaModel]='denied'>
+                    <li *ngFor="let country of denied | order: 'country': reverseOrder">
+                        {{country.country}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

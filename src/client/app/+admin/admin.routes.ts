@@ -3,6 +3,7 @@ import { RouterConfig } from '@angular/router';
 import { AdminComponent } from './index';
 import { ApplicationsComponent, ApplicationsRoutes } from './+applications/index';
 import { NewsRoutes } from './+news/index';
+import { CountriesRoutes } from './+countries/index';
 import { AuthGuard } from '../guard/index';
 
 export const AdminRoutes: RouterConfig = [
@@ -17,7 +18,8 @@ export const AdminRoutes: RouterConfig = [
       children: [
           {path: '', component: ApplicationsComponent},
           ...ApplicationsRoutes,
-          ...NewsRoutes
+          ...NewsRoutes,
+          ...CountriesRoutes
       ],
       canActivate: [AuthGuard]
   }

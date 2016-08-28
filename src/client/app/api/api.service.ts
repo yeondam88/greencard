@@ -34,6 +34,12 @@ export class ApiService {
             .map(res => <any[]> res.json())
     }
 
+    putCountries(denied: any[]){
+        let body = JSON.stringify({'denied': denied})
+        return  this.http.put(this.url + 'countries', body)
+            .map(res => <any[]> res.json())
+    }
+
     getApplications(){
         return this.http.get(this.url + 'applications')
             .map(res => <any[]> res.json())

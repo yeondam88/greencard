@@ -56,6 +56,7 @@ $app->post('/login', 'login');
 $app->post('/admin/login', 'adminLogin');
 $app->put('/admin/user/:id', 'adminUpdate');
 $app->get('/countries', 'getCountries');
+$app->put('/countries', 'putCountries');
 $app->get('/applications', 'getApplications');
 $app->get('/applications/:id', 'getApplication');
 $app->post('/applications', 'postApplication');
@@ -231,6 +232,42 @@ function getCountries(){
 	$q->execute();
 	$result = $q->fetchAll(PDO::FETCH_OBJ);
 	echo json_encode($result, JSON_NUMERIC_CHECK);
+}
+
+function putCountries(){
+	global $app;
+	$request = $app->request();
+	$body = $request->getBody();
+	$data = json_decode($body);
+	$denied = $data->denied;
+	$auth = authorize();
+
+	if($auth){
+		$db = connect_db(); 
+		$reset = "UPDATE tbl_countries set pass = 1";
+		$sql = "UPDATE tbl_countries set pass = 0 where id = :id";
+		$sql_countries = "SELECT * from tbl_countries";
+		$db->beginTransaction();
+
+		$q = $db->prepare($reset);
+		$q->execute();
+
+		$q = $db->prepare($sql);
+		foreach($denied as $country){
+			$q->bindParam(':id', $country->id);
+			$q->execute();
+		}
+
+		$q = $db->prepare($sql_countries);
+		$q->execute();
+		$countries = $q->fetchAll(PDO::FETCH_OBJ);
+
+		$db->commit();
+		echo json_encode($countries, JSON_NUMERIC_CHECK);
+	}
+	else{
+		echo "No Authorization";
+	}
 }
 
 function getApplications(){
