@@ -16,5 +16,7 @@ import { ApiService } from './api/index';
   directives: [ROUTER_DIRECTIVES, ToolbarComponent, NavbarComponent, FooterComponent, AdminBrandingComponent, AdminToolbarComponent]
 })
 export class AppComponent {
-  constructor(private auth: AuthService){}
+  constructor(private auth: AuthService){
+    auth.checkSession();
+  }
 }
