@@ -22,7 +22,6 @@ export class MainComponent {
     @Input() days: any[];
     @Input() months: any[];
     @Input() years: any[];
-    @Input() children: any[];
     @Output() onMainComplete = new EventEmitter<any>();
 
 
@@ -41,6 +40,7 @@ export class MainComponent {
             this.application.password &&
             this.application.email === this.application.confirmEmail &&
             this.application.password === this.application.confirmPassword &&
+            this.application.phone.country && this.application.phone.number &&
             this.application.birth.day.id && this.application.birth.month.id && this.application.birth.year.id)
             {
             return true;

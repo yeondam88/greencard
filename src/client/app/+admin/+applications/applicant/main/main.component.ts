@@ -22,7 +22,6 @@ export class MainComponent {
     @Input() days: any[];
     @Input() months: any[];
     @Input() years: any[];
-    @Input() children: any[];
     @Output() onMainComplete = new EventEmitter<any>();
 
 

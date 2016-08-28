@@ -1,147 +1,223 @@
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="row">
-        <h4>Personal Information</h4>
-        <hr>
-            <div class="col-sm-4">
-                <label>Title</label>
+<form #mainForm="ngForm">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div id="personal-info">
+                <div class="row">
+                    <h4>Personal Information</h4>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Title <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.title" name="title" #title="ngModel">
+                            <option *ngFor="let title of titles" [ngValue]="title">{{title.title}}</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="!application.title.id && !title.pristine">Please choose a title</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>First Name <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="application.firstname" name="fisrtname" #firstname="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.firstname && !firstname.pristine">Please write your first name</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Last Name <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="application.lastname" name="lastname" #lastname="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.lastname && !lastname.pristine">Please write your last name</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Email <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="application.email" name="email" #email="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.email && !email.pristine">Please write your email</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Confirm Email <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="application.confirmEmail" name="confirmEmail" #confirmEmail="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="application.confirmEmail !== application.email && !confirmEmail.pristine">Email does not match</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Password <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" [(ngModel)]="application.password" name="password" #password="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.password && !password.pristine">Please write your password</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Confirm Password <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" [(ngModel)]="application.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.confirmPassword !== application.password && !confirmPassword.pristine">Password does not match</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Gender <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.gender" name="gender" #gender="ngModel">
+                            <option *ngFor="let gender of genders" [ngValue]="gender">{{gender.gender}}</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="!application.gender.id && !gender.pristine">Please choose your gender</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Education <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.education" name="education2" #education2="ngModel">
+                            <option *ngFor="let education of educations" [ngValue]="education">{{education.level}}</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="!application.education.id && !education2.pristine">Please choose your education level</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Work Experience <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.experience" name="experience2" #experience2="ngModel">
+                            <option *ngFor="let experience of workExperiences" [ngValue]="experience">{{experience.level}}</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="!application.experience && !experince2.pristine">Please choose your work experience</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Phone <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-2">
+                        <!--
+                        <select class="form-control" [(ngModel)]="application.phone.country" name="phone_country">
+                            <option *ngFor="let country of countryNumbers" [ngValue]="country">{{number.number}}</option>
+                        </select>
+                        -->
+                        <input type="text" class="form-control" [(ngModel)]="application.phone.country" name="phone-country" #phoneCountry="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.phone.country && !phoneCountry.pristine">Please write your country code</div>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="application.phone.number" name="phone-number" #phoneNumber="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.phone.number && !phoneNumber.pristine">Please write your phone number</div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.title" name="title">
-                    <option *ngFor="let title of titles" [ngValue]="title">{{title.title}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>First Name</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.firstname" name="fisrtname" required>
-            </div>
-            <div class="col-sm-4">
-                <label>Last Name</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.lastname" name="lastname" required>
-            </div>
-            <div class="col-sm-4">
-                <label>Email</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.email" name="email" required>
-            </div>
-            <div class="col-sm-4">
-                <label>Confirm Email</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.confirmEmail" name="confirmEmail" required>
-            </div>
-            <div class="col-sm-4">
-                <label>Password</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="password" class="form-control" [(ngModel)]="application.password" name="password" required>
-            </div>
-            <div class="col-sm-4">
-                <label>Confirm Password</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="password" class="form-control" [(ngModel)]="application.confirmPassword" name="confirmPassword" required>
-            </div>
-            <div class="col-sm-4">
-                <label>Gender</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.gender" name="gender">
-                    <option *ngFor="let gender of genders" [ngValue]="gender">{{gender.gender}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Education</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.education" name="education2">
-                    <option *ngFor="let education of educations" [ngValue]="education">{{education.level}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Work Experience</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.experience" name="experience2">
-                    <option *ngFor="let experience of workExperiences" [ngValue]="experience">{{experience.level}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Phone</label>
-            </div>
-            <div class="col-sm-2">
-                <!--
-                <select class="form-control" [(ngModel)]="application.phone.country" name="phone_country">
-                    <option *ngFor="let country of countryNumbers" [ngValue]="country">{{number.number}}</option>
-                </select>
-                -->
-                <input type="text" class="form-control" [(ngModel)]="application.phone.country" name="phone-country" required>
-            </div>
-            <div class="col-sm-6">
-                <input type="text" class="form-control" [(ngModel)]="application.phone.number" name="phone-number" required>
-            </div>
-        </div>
-        <div class="spacer-30"></div>
-        <div class="row">
-        <h4>Birth Information</h4>
-        <hr>
-            <div class="col-sm-4">
-                <label>Birth Day</label>
-            </div>
-            <div class="col-sm-2">
-            <select class="form-control" [(ngModel)]="application.birth.day" name="birthday">
-                <option *ngFor="let day of days" [ngValue]="day">{{day.day}}</option>
-            </select></div>
-            <div class="col-sm-3">
-                <select class="form-control" [(ngModel)]="application.birth.month" name="birthmonth">
-                    <option *ngFor="let month of months" [ngValue]="month">{{month.month}}</option>
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <select class="form-control" [(ngModel)]="application.birth.year" name="birthyear">
-                    <option *ngFor="let year of years" [ngValue]="year">{{year.year}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Birth City</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.city" name="city">
-            </div>
-            <div class="col-sm-4">
-                <label>Birth Country</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.country" name="country">
-                    <option *ngFor="let country of countries" [ngValue]="country">{{country.country}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Marital Status</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.marital" name="application-marital2">
-                    <option *ngFor="let marital of maritals" [ngValue]="marital">{{marital.answer}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Children</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.children" name="application-children">
-                    <option *ngFor="let child of children" [ngValue]="child">{{child}}</option>
-                </select>
+            
+            <div class="spacer-30"></div>
+            <div id="birth-information">
+                <div class="row">
+                    <h4>Birth Information</h4>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Birth Day <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <select class="form-control" [(ngModel)]="application.birth.day" name="birthday" #birthDay="ngModel">
+                                <option *ngFor="let day of days" [ngValue]="day">{{day.day}}</option>
+                            </select></div>
+                            <div class="col-sm-6">
+                                <select class="form-control" [(ngModel)]="application.birth.month" name="birthmonth" #birthMonth="ngModel">
+                                    <option *ngFor="let month of months" [ngValue]="month">{{month.month}}</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-3">
+                                <select class="form-control" [(ngModel)]="application.birth.year" name="birthyear" #birthYear="ngModel">
+                                    <option *ngFor="let year of years" [ngValue]="year">{{year.year}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger" *ngIf="(!application.birth.day.id || !application.birth.month.id || !application.birth.year.id) && !birthDay.pristine && !birthMonth.pristine && !birthYear.pristine">Please write your birthdate</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Birth City <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" [(ngModel)]="application.city" name="city" #city="ngModel" required>
+                        <div class="alert alert-danger" *ngIf="!application.city && !city.pristine">Please write your birth city</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Birth Country <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.country" name="country" #country="ngModel">
+                            <option *ngFor="let country of countries" [ngValue]="country">{{country.country}}</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="!application.country && !country.pristine">Please choose the country where you were born</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Marital Status <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.marital" name="application-marital2" #marital="ngModel">
+                            <option *ngFor="let marital of maritals" [ngValue]="marital">{{marital.answer}}</option>
+                        </select>
+                        <div class="alert alert-danger" *ngIf="!application.city && !city.pristine">Please choose your marital status</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Children <span class="required">*</span></label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" [(ngModel)]="application.children" name="application-children" #children="ngModel">
+                            <option *ngFor="let child of [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]" [ngValue]="child">{{child}}</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-10 col-md-offset-1">
-        <button class="btn btn-success pull-right" [disabled]="!check()" (click)="next()">Next</button>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="alert alert-warning" *ngIf="!check()">You are still missing some information, please check that all fields are filled properly</div>
+            <button class="btn btn-success pull-right" [disabled]="!check()" (click)="next()">Next</button>
+        </div>
     </div>
-</div>
+</form>

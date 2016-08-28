@@ -81,10 +81,6 @@ export class ApplyComponent implements OnInit {
 
   private years: any[] = [];
 
-  private children: number[] = [
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-  ]
-
   private ready: boolean = false;
 
   constructor(private api: ApiService) {}
