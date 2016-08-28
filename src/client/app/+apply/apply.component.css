@@ -1,3 +1,13 @@
 :host .required{
-    color: red;
+    color: #ff8989;
+}
+
+:host .pass{
+    color: #26bb64;
+}
+
+:host label{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
 }

@@ -77,7 +77,7 @@
                                 <div *ngIf="finished()">
                                     <div *ngIf="eligible()" class="text-success">You are Eligible</div>
                                     <div *ngIf="!eligible()" class="text-danger">You are NOT Eligible</div>
-                                    <div class="btn btn-success btn-lg btn-block" *ngIf="eligible()" (click)="goto(2)">Register</div>
+                                    <button type="button" class="btn btn-success btn-lg btn-block" *ngIf="eligible()" (click)="goto(2)">Register</button>
                                 </div>
                             </form>
                         </div>

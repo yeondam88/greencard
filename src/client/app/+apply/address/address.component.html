@@ -1,49 +1,76 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="row">
-        <h4>Address</h4>
-        <hr>
+            <h4>Address</h4>
+            <hr>
+        </div>
+        <div class="row">
             <div class="col-sm-4">
                 <label>Address Line 1</label>
             </div>
             <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.address.line1" name="address-line1" required>
+                <input type="text" class="form-control" [(ngModel)]="application.address.line1" name="address-line1" #address1="ngModel" required>
+                <div class="alert alert-danger" *ngIf="!application.address.line1 && !address1.pristine">Please write your address</div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-4">
                 <label>Address Line 2</label>
             </div>
             <div class="col-sm-8">
                 <input type="text" class="form-control" [(ngModel)]="application.address.line2" name="address-line2">
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-4">
                 <label>City</label>
             </div>
             <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.address.city" name="address-city">
+                <input type="text" class="form-control" [(ngModel)]="application.address.city" name="address-city" #city="ngModel">
+                <div class="alert alert-danger" *ngIf="!application.address.city && !city.pristine">Please write the city where you reside</div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-4">
                 <label>State</label>
             </div>
             <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.address.state" name="address-state">
+                <input type="text" class="form-control" [(ngModel)]="application.address.state" name="address-state" #state="ngModel">
+                <div class="alert alert-danger" *ngIf="!application.address.state && !state.pristine">Please write the state where you reside</div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-4">
                 <label>Postal Code</label>
             </div>
             <div class="col-sm-8">
-                <input type="text" class="form-control" [(ngModel)]="application.address.postal" name="application-addressPostal">
+                <input type="text" class="form-control" [(ngModel)]="application.address.postal" name="application-addressPostal" #postal="ngModel">
+                <div class="alert alert-danger" *ngIf="!application.address.postal && !postal.pristine">Please write your postal code</div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-sm-4">
                 <label>Country</label>
             </div>
             <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="application.address.country" name="father-country">
+                <select class="form-control" [(ngModel)]="application.address.country" name="address-country" #country="ngModel">
                     <option *ngFor="let country of countries" [ngValue]="country">{{country.country}}</option>
                 </select>
+                <div class="alert alert-danger" *ngIf="!application.address.country.id && !country.pristine">Please choose the country where you reside</div>
             </div>
         </div>
     </div>
 </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="alert alert-warning" *ngIf="!check()">You are still missing some information, please check that all fields are filled properly</div>
+        </div>
+    </div>
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <button class="btn btn-info pull-left" (click)="back()">Back</button>

@@ -1,134 +1,207 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <div class="row" *ngIf="spouse">
-        <h4>Spouse</h4>
-        <hr>
-            <div class="col-sm-4">
-                <label>First Name</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" name="firstname" [(ngModel)]="spouse.firstname" class="form-control">
-            </div>
-            <div class="col-sm-4">
-                <label>Last Name</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" name="lastname" [(ngModel)]="spouse.lastname" class="form-control">
-            </div>
-            <div class="col-sm-4">
-                <label>Gender</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="spouse.gender" name="gender">
-                    <option *ngFor="let gender of genders" [ngValue]="gender">{{gender.gender}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Education</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="spouse.education" name="education">
-                    <option *ngFor="let education of educations" [ngValue]="education">{{education.level}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Work Experience</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="spouse.experience" name="experience">
-                    <option *ngFor="let experience of workExperiences" [ngValue]="experience">{{experience.level}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Birth Day</label>
-            </div>
-            <div class="col-sm-2">
-            <select class="form-control" [(ngModel)]="spouse.birth.day" name="birthday">
-                <option *ngFor="let day of days" [ngValue]="day">{{day.day}}</option>
-            </select></div>
-            <div class="col-sm-3">
-                <select class="form-control" [(ngModel)]="spouse.birth.month" name="birthmonth">
-                    <option *ngFor="let month of months" [ngValue]="month">{{month.month}}</option>
-                </select>
-            </div>
-            <div class="col-sm-3">
-                <select class="form-control" [(ngModel)]="spouse.birth.year" name="birthyear">
-                    <option *ngFor="let year of years" [ngValue]="year">{{year.year}}</option>
-                </select>
-            </div>
-            <div class="col-sm-4">
-                <label>Birth City</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" name="city" [(ngModel)]="spouse.city" class="form-control">
-            </div>
-            <div class="col-sm-4">
-                <label>Birth Country</label>
-            </div>
-            <div class="col-sm-8">
-                <select class="form-control" [(ngModel)]="spouse.country" name="country">
-                    <option *ngFor="let country of countries" [ngValue]="country">{{country.country}}</option>
-                </select>
-            </div>
-        </div>
-        <div *ngFor="let child of children; let i = index">
-            <div class="spacer-30"></div>
+        <div *ngIf="spouse">
             <div class="row">
-            <h4>Child {{i+1}}</h4>
-            <hr>
+                <h4>Spouse</h4>
+                <hr>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-4">
-                    <label>First Name</label>
+                    <label ngClass="{'pass':spouse.firstname}">First Name</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" name="firstname" [(ngModel)]="child.firstname" class="form-control">
+                    <input type="text" name="firstname" [(ngModel)]="spouse.firstname" class="form-control" #firstname="ngModel">
+                    <div class="alert alert-danger" *ngIf="!spouse.firstname && !firstname.pristine">Please write your spouse's first name</div>
                 </div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-4">
                     <label>Last Name</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" name="lastname" [(ngModel)]="child.lastname" class="form-control">
+                    <input type="text" name="lastname" [(ngModel)]="spouse.lastname" class="form-control" #lastname="ngModel">
+                    <div class="alert alert-danger" *ngIf="!spouse.lastname && !lastname.pristine">Please write your spouse's last name</div>
                 </div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-4">
                     <label>Gender</label>
                 </div>
                 <div class="col-sm-8">
-                    <select class="form-control" [(ngModel)]="child.gender" name="gender">
+                    <select class="form-control" [(ngModel)]="spouse.gender" name="gender" #gender="ngModel">
                         <option *ngFor="let gender of genders" [ngValue]="gender">{{gender.gender}}</option>
                     </select>
+                    <div class="alert alert-danger" *ngIf="!spouse.gender.id && !gender.pristine">Please choose your spouse's gender</div>
                 </div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-4">
-                    <label>Birth Day</label>
+                    <label>Education</label>
                 </div>
-                <div class="col-sm-2">
-                <select class="form-control" [(ngModel)]="child.birth.day" name="birthday">
-                    <option *ngFor="let day of days" [ngValue]="day">{{day.day}}</option>
-                </select></div>
-                <div class="col-sm-3">
-                    <select class="form-control" [(ngModel)]="child.birth.month" name="birthmonth">
-                        <option *ngFor="let month of months" [ngValue]="month">{{month.month}}</option>
+                <div class="col-sm-8">
+                    <select class="form-control" [(ngModel)]="spouse.education" name="education" #education="ngModel">
+                        <option *ngFor="let education of educations" [ngValue]="education">{{education.level}}</option>
                     </select>
+                    <div class="alert alert-danger" *ngIf="!spouse.education.id && !education.pristine">Please choose your spouse's education level</div>
                 </div>
-                <div class="col-sm-3">
-                    <select class="form-control" [(ngModel)]="child.birth.year" name="birthyear">
-                        <option *ngFor="let year of years" [ngValue]="year">{{year.year}}</option>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Work Experience</label>
+                </div>
+                <div class="col-sm-8">
+                    <select class="form-control" [(ngModel)]="spouse.experience" name="experience" #experience="ngModel">
+                        <option *ngFor="let experience of workExperiences" [ngValue]="experience">{{experience.level}}</option>
                     </select>
+                    <div class="alert alert-danger" *ngIf="!spouse.experience.id && !experience.pristine">Please choose your spouse's work experience</div>
                 </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth Date</label>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <select class="form-control" [(ngModel)]="spouse.birth.day" name="birthday" #birthDay="ngModel">
+                            <option *ngFor="let day of days" [ngValue]="day">{{day.day}}</option>
+                        </select></div>
+                        <div class="col-sm-6">
+                            <select class="form-control" [(ngModel)]="spouse.birth.month" name="birthmonth" #birthMonth="ngModel">
+                                <option *ngFor="let month of months" [ngValue]="month">{{month.month}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control" [(ngModel)]="spouse.birth.year" name="birthyear" #birthYear="ngModel">
+                                <option *ngFor="let year of years" [ngValue]="year">{{year.year}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="(!spouse.birth.day.id || !spouse.birth.month.id || !spouse.birth.year.id) && !birthDay.pristine && !birthMonth.pristine && !birthYear.pristine">Please write your spouse's' birthdate</div>
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-4">
                     <label>Birth City</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="text" name="city" [(ngModel)]="child.city" class="form-control">
+                    <input type="text" name="city" [(ngModel)]="spouse.city" class="form-control" #birthcity="ngModel">
+                    <div class="alert alert-danger" *ngIf="!spouse.city && !birthcity.pristine">Please write your spouse's birth city</div>
                 </div>
+            </div>
+
+            <div class="row">
                 <div class="col-sm-4">
                     <label>Birth Country</label>
                 </div>
                 <div class="col-sm-8">
-                    <select class="form-control" [(ngModel)]="child.country" name="country">
+                    <select class="form-control" [(ngModel)]="spouse.country" name="country" #birthcountry="ngModel">
                         <option *ngFor="let country of countries" [ngValue]="country">{{country.country}}</option>
                     </select>
+                    <div class="alert alert-danger" *ngIf="!spouse.country.id && !birthcountry.pristine">Please choose your spouse's birth country</div>
                 </div>
             </div>
         </div>
+
+        <div *ngFor="let child of children; let i = index">
+            <div class="spacer-30"></div>
+            <div class="row">
+                <h4>Child {{i+1}}</h4>
+                <hr>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>First Name</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" name="firstname" [(ngModel)]="child.firstname" class="form-control" #firstname="ngModel">
+                    <div class="alert alert-danger" *ngIf="!child.firstname && !firstname.pristine">Please write your child's first name</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Last Name</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" name="lastname" [(ngModel)]="child.lastname" class="form-control" #lastname="ngModel">
+                    <div class="alert alert-danger" *ngIf="!child.lastname && !lastname.pristine">Please write your child's last name</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Gender</label>
+                </div>
+                <div class="col-sm-8">
+                    <select class="form-control" [(ngModel)]="child.gender" name="gender" #gender="ngModel">
+                        <option *ngFor="let gender of genders" [ngValue]="gender">{{gender.gender}}</option>
+                    </select>
+                    <div class="alert alert-danger" *ngIf="!child.gender.id && !gender.pristine">Please write your child's last name</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth Day</label>
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <select class="form-control" [(ngModel)]="child.birth.day" name="birthday" #birthDay="ngModel">
+                            <option *ngFor="let day of days" [ngValue]="day">{{day.day}}</option>
+                        </select></div>
+                        <div class="col-sm-6">
+                            <select class="form-control" [(ngModel)]="child.birth.month" name="birthmonth" #birthMonth="ngModel">
+                                <option *ngFor="let month of months" [ngValue]="month">{{month.month}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <select class="form-control" [(ngModel)]="child.birth.year" name="birthyear" #birthYear="ngModel">
+                                <option *ngFor="let year of years" [ngValue]="year">{{year.year}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="alert alert-danger" *ngIf="(!child.birth.day.id || !child.birth.month.id || !child.birth.year.id) && !birthDay.pristine && !birthMonth.pristine && !birthYear.pristine">Please write your spouse's' birthdate</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth City</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" name="city" [(ngModel)]="child.city" class="form-control" #city="ngModel">
+                    <div class="alert alert-danger" *ngIf="!child.city && !city.pristine">Please write your child's birth city</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>Birth Country</label>
+                </div>
+                <div class="col-sm-8">
+                    <select class="form-control" [(ngModel)]="child.country" name="country" #country="ngModel">
+                        <option *ngFor="let country of countries" [ngValue]="country">{{country.country}}</option>
+                    </select>
+                    <div class="alert alert-danger" *ngIf="!child.city && !city.pristine">Please choose your child's birth country</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="alert alert-warning" *ngIf="!checkSpouse()">You are still missing some information about your spouse, please check that all fields are filled properly</div>
+        <div class="alert alert-warning" *ngIf="!checkChildren()">You are still missing some information about your children, please check that all fields are filled properly</div>
     </div>
 </div>
 <div class="row">
